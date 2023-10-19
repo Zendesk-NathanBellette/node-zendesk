@@ -3,14 +3,12 @@ import dotenv from 'dotenv';
 import {beforeAll, afterAll, describe, expect, it} from 'vitest';
 import {back as nockBack} from 'nock';
 import {setupClient} from './setup.js';
+import {uniqueOrgName} from "../src/clients/helpers";
 
 dotenv.config();
 
 describe('Zendesk Client Pagination', () => {
   const testOrganizations = [];
-
-  const uniqueOrgName = (iteration) =>
-    `Test Organization ${('The Quick Brown Foxx' + iteration).toString('hex')}`;
 
   const defaultClient = setupClient();
 

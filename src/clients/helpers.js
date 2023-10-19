@@ -318,10 +318,18 @@ function generateUserAgent() {
   })`;
 }
 
+const uniqueOrgName = (iteration) =>
+    `Test Organization ${('The Quick Brown Foxx' + iteration).toString('hex')}`;
+
+const uniqueUserName = (iteration) =>
+    `Test User ${('The Quick Brown Foxx' + iteration).toString('hex')}`;
+
 module.exports = {
   flatten,
   assembleUrl,
   checkRequestResponse,
   processResponseBody,
   generateUserAgent,
+  uniqueOrgName,
+  uniqueUserName
 };
